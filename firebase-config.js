@@ -1,8 +1,1 @@
-// Dán cấu hình Firebase của Sếp vào đây (Firebase Console > Project settings > Your apps > Web app).
-// Các giá trị này là cấu hình công khai của web app, không phải mật khẩu.
-window.FIREBASE_CONFIG = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  appId: ""
-};
+window.FIREBASE_CONFIG = {apiKey: "AIzaSyCqqhECDsZAMY_jK4y16Y_3PCWStwv4ddM", authDomain: "make-automation-506601.firebaseapp.com", projectId: "make-automation-506601", appId: "1:524461027143:web:96f99b2fe0b0a89273a662"};
