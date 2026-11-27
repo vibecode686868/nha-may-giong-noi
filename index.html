@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nhà Máy Giọng Nói - NGUYENDUONG686</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#121830;--ink:#eef0f7;--mute:#a7adc2;--gold:#e8bd4f;--line:#262d48}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:radial-gradient(1200px 500px at 20% -10%,#1b2242 0,transparent 60%),var(--bg);color:var(--ink);font:16px/1.55 "Be Vietnam Pro",system-ui,sans-serif;overflow-x:clip}
+header{display:flex;gap:18px;align-items:center;padding:20px max(4vw,16px);border-bottom:1px solid var(--line);background:#0a0e1c;flex-wrap:wrap}
+.logo{width:76px;height:76px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#f7dc8a,#c8962c 70%,#8a6418);display:grid;place-items:center;box-shadow:0 6px 20px #0008}
+.brand{flex:1}
+h1{font:700 clamp(22px,3.4vw,36px)/1.1 "Playfair Display",serif;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.badge{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#f3e3b5;border:1.5px solid #8a7640;border-radius:999px;padding:5px 14px}
+.badge.plain{border:0;padding-left:0;color:var(--gold)}
+.who{display:flex;align-items:center;gap:10px}
+.who img{width:40px;height:40px;border-radius:50%}
+.who span{font-weight:600;font-size:15px}
+.ghost{min-height:40px;padding:0 14px;border-radius:10px;border:1px solid #8a7640;background:transparent;color:#f3e3b5;font:600 14px "Be Vietnam Pro";cursor:pointer}
+main{max-width:1240px;margin:0 auto;padding:24px max(4vw,16px) 60px}
+section.step{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:24px;margin-bottom:22px}
+.stepHead{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.num{width:44px;height:44px;border-radius:50%;background:var(--gold);color:#1a1405;font-weight:700;font-size:20px;display:grid;place-items:center;flex:none}
+h2{font:700 clamp(20px,2.4vw,26px)/1.2 "Be Vietnam Pro",sans-serif;margin:0;flex:1}
+.search{background:#0d1226;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:10px 14px;font:16px "Be Vietnam Pro";width:240px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{position:relative;text-align:left;background:linear-gradient(160deg,#1d2440,#141a2e 70%);border:2.5px solid var(--c);border-radius:20px;padding:20px 24px 22px;color:var(--ink);cursor:pointer;font:inherit;min-height:168px;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 10px 26px #0007}
+.card:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.card .idx{position:absolute;top:16px;right:22px;font-weight:700;color:var(--c);font-size:17px}
+.card .ico{font-size:36px;line-height:1;display:block;margin:6px 0 14px}
+.card .name{font:700 clamp(21px,2.3vw,27px)/1.15 "Playfair Display",serif;display:block;margin-bottom:8px}
+.card .tags{color:var(--mute);font-size:16px;display:block;padding-right:40px}
+.card .tick{position:absolute;right:20px;bottom:18px;width:30px;height:30px;border-radius:50%;border:2px solid var(--c);display:grid;place-items:center;color:#10131f;font-weight:700}
+.card[aria-pressed=true]{box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 30%,transparent),0 10px 26px #0008}
+.card[aria-pressed=true] .tick{background:var(--c)}
+.card[aria-pressed=true] .tick::after{content:"✓"}
+.foot{color:var(--mute);margin-top:16px;font-size:15px}
+.lab{display:block;font-weight:600;margin:0 0 8px}
+textarea,input.txt{width:100%;background:#0d1226;border:1px solid var(--line);color:var(--ink);border-radius:14px;padding:14px 16px;font:16px/1.5 "Be Vietnam Pro";resize:vertical}
+textarea:focus,input:focus,.search:focus{outline:2px solid var(--gold);outline-offset:1px}
+.row{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:18px;margin-bottom:18px}
+.row3{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:18px;margin-top:18px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line);background:#0d1226;color:var(--ink);font:600 15px "Be Vietnam Pro";cursor:pointer}
+.chip[aria-pressed=true]{border-color:var(--gold);color:var(--gold)}
+.chip .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#5fd07a;margin-left:8px;vertical-align:middle}
+.keyRow{display:flex;gap:10px}
+.keyRow input{flex:1}
+.go{min-height:54px;padding:0 30px;border:0;border-radius:16px;background:linear-gradient(180deg,#f3cf6a,#c9962e);color:#1a1405;font:700 17px "Be Vietnam Pro";cursor:pointer;box-shadow:0 6px 18px #c9962e44}
+.go:disabled{opacity:.55;cursor:wait}
+.actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.note{color:var(--mute);font-size:14px}
+.out{display:grid;gap:16px}
+.box{border:1.5px solid var(--line);border-radius:16px;padding:16px 18px;background:#0d1226}
+.box h3{margin:0 0 8px;font:700 17px "Be Vietnam Pro";display:flex;justify-content:space-between;align-items:center;gap:10px;color:var(--gold)}
+.box p{margin:0;white-space:pre-wrap}
+.empty{color:var(--mute);text-align:center;padding:26px 10px}
+.hist{display:grid;gap:10px;margin-top:6px}
+.hist button{text-align:left;background:#0d1226;border:1px solid var(--line);border-radius:12px;color:var(--ink);padding:10px 14px;font:15px "Be Vietnam Pro";cursor:pointer}
+#gate{position:fixed;inset:0;background:radial-gradient(900px 500px at 50% 0,#1b2242,var(--bg) 70%);display:grid;place-items:center;padding:20px;z-index:10}
+.gateBox{max-width:460px;width:100%;text-align:center;background:var(--panel);border:1.5px solid #8a7640;border-radius:24px;padding:36px 28px}
+.gateBox h1{font-size:clamp(24px,5vw,32px)}
+.gateBox p{color:var(--mute)}
+.gbtn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 24px;border-radius:14px;border:0;background:#fff;color:#1f1f1f;font:600 16px "Be Vietnam Pro";cursor:pointer;margin-top:10px}
+.hidden{display:none!important}
+@media(max-width:760px){.grid,.row,.row3{grid-template-columns:minmax(0,1fr)}.search{width:100%}}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+<script src="firebase-config.js"></script>
+</head>
+<body>
+<div id="gate">
+  <div class="gateBox">
+    <div class="logo" style="margin:0 auto 18px" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 44 44"><rect x="16" y="5" width="12" height="22" rx="6" fill="#1a1405"/><path d="M10 21a12 12 0 0 0 24 0" fill="none" stroke="#1a1405" stroke-width="3" stroke-linecap="round"/><path d="M22 33v6M15 39h14" stroke="#1a1405" stroke-width="3" stroke-linecap="round"/></svg></div>
+    <h1>Nhà Máy Giọng Nói</h1>
+    <p id="gateMsg">Đăng nhập bằng tài khoản Google để sử dụng.</p>
+    <button class="gbtn" id="login"><svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.6l6.7-6.7C35.6 2.4 30.2 0 24 0 14.6 0 6.6 5.4 2.6 13.3l7.8 6C12.3 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.8c4.3-4 6.9-9.9 6.9-17.2z"/><path fill="#FBBC05" d="M10.4 28.7c-.5-1.4-.8-3-.8-4.7s.3-3.2.8-4.7l-7.8-6C.9 16.6 0 20.2 0 24s.9 7.4 2.6 10.7l7.8-6z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.8c-2.1 1.4-4.8 2.3-8.5 2.3-6.3 0-11.7-4.1-13.6-9.8l-7.8 6C6.6 42.6 14.6 48 24 48z"/></svg>Đăng nhập với Google</button>
+  </div>
+</div>
+
+<header>
+  <div class="logo" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 44 44"><rect x="16" y="5" width="12" height="22" rx="6" fill="#1a1405"/><path d="M10 21a12 12 0 0 0 24 0" fill="none" stroke="#1a1405" stroke-width="3" stroke-linecap="round"/><path d="M22 33v6M15 39h14" stroke="#1a1405" stroke-width="3" stroke-linecap="round"/></svg></div>
+  <div class="brand">
+    <h1>Nhà Máy Giọng Nói Thương Hiệu</h1>
+    <div class="badges"><span class="badge plain">👑 King Eagle</span><span class="badge">NGUYENDUONG686</span><span class="badge">Minimax Voice</span></div>
+  </div>
+  <div class="who"><img id="avatar" alt="" class="hidden"><span id="uname"></span><button class="ghost" id="logout">Đăng xuất</button></div>
+</header>
+
+<main>
+  <section class="step">
+    <div class="stepHead"><span class="num">⚙</span><h2>Cài đặt AI — API Key</h2></div>
+    <div class="chips" id="prov"></div>
+    <div class="row3" id="keyArea">
+      <div><label class="lab" for="key" id="keyLab">API Key</label>
+        <div class="keyRow"><input class="txt" id="key" type="password" autocomplete="off" placeholder="Dán API key của Sếp vào đây"><button class="ghost" id="eye" type="button">Hiện</button></div></div>
+      <div><label class="lab" for="model">Model</label><input class="txt" id="model"></div>
+    </div>
+    <div class="actions" style="margin-top:14px"><button class="ghost" id="saveKey">Lưu cài đặt</button><button class="ghost" id="delKey">Xóa key</button><span class="note" id="keyNote"></span></div>
+    <p class="note" style="margin:14px 0 0">API key chỉ được lưu trên trình duyệt của máy Sếp. Khi tạo nội dung, key được gửi qua máy chủ của app để gọi AI và không được lưu lại.</p>
+  </section>
+
+  <section class="step">
+    <div class="stepHead"><span class="num">1</span><h2>Chọn ngành nghề — 20 template</h2><input class="search" id="q" placeholder="Tìm ngành..." aria-label="Tìm ngành"></div>
+    <div class="grid" id="grid"></div>
+    <div class="foot" id="foot"></div>
+  </section>
+
+  <section class="step">
+    <div class="stepHead"><span class="num">2</span><h2>Nhập 1 câu ngắn</h2></div>
+    <div class="row">
+      <div><label class="lab" for="idea">Câu ngắn mô tả nội dung hoặc thông điệp</label>
+      <textarea id="idea" rows="3" placeholder="Ví dụ: Chia sẻ cách chọn căn hộ đầu tiên cho người trẻ tại HÀ NỘI"></textarea></div>
+      <div><span class="lab">Giới tính giọng</span>
+      <div class="chips" id="gender"><button class="chip" data-g="" aria-pressed="true">Không chọn</button><button class="chip" data-g="nam" aria-pressed="false">Giọng nam</button><button class="chip" data-g="nữ" aria-pressed="false">Giọng nữ</button></div></div>
+    </div>
+    <label class="lab" for="sig">Phong cách cá nhân (luôn áp dụng)</label>
+    <input class="txt" id="sig" value="Giọng nói trong trẻo - chuẩn giọng Hà Nội - nói nhanh lưu loát, có lời CTA nhưng tránh các từ mang tính chất tuyệt đối hứa hẹn">
+    <div class="actions" style="margin-top:18px"><button class="go" id="go">Tạo đoạn giọng nói</button><span class="note" id="status">Chọn 1 ngành và nhập 1 câu ngắn rồi bấm tạo.</span></div>
+  </section>
+
+  <section class="step">
+    <div class="stepHead"><span class="num">3</span><h2>Kết quả dùng cho Minimax</h2></div>
+    <div class="out" id="out"><div class="empty">Kết quả sẽ hiện ở đây.</div></div>
+    <div id="histWrap" class="hidden" style="margin-top:20px"><span class="lab">Đã tạo gần đây</span><div class="hist" id="hist"></div></div>
+  </section>
+</main>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const COLORS=["#e8b84a","#f07fb5","#4fb8d9","#f0a040","#7ed07a","#f06a4a","#5fd0a8","#9b87f0"];
+const D=[
+["🏢","Bất động sản","Dự án · Thị trường · Uy tín","trầm vừa, rõ ràng và chắc chắn","chuyên nghiệp và đáng tin cậy","các video giới thiệu dự án, phân tích thị trường","tạo cảm giác an tâm, truyền đạt thông tin minh bạch","nói nhịp vừa phải, mạch lạc","sự tự tin của người tư vấn"],
+["📚","Giáo dục - Đào tạo","Bài giảng · Kỹ năng · Khích lệ","ấm áp, rõ ràng và truyền cảm","gần gũi và khích lệ","các bài giảng online, video hướng dẫn học tập","người nghe dễ hiểu, dễ nhớ, tạo động lực học tập","nói rõ từng ý, có nhấn nhá ở từ khóa quan trọng","tâm huyết của người thầy"],
+["💄","Mỹ phẩm - Làm đẹp","Review · Chăm sóc da · Rạng rỡ","nhẹ nhàng, ngọt ngào và tươi sáng","tinh tế và thu hút","các video review sản phẩm, hướng dẫn chăm sóc da","khơi gợi cảm xúc, tạo sự tin tưởng","nói mềm mại, uyển chuyển","sự tự tin và rạng rỡ"],
+["🌸","Spa - Chăm sóc sức khỏe","Liệu trình · Thư giãn · Tận tâm","trầm ấm, chậm rãi và thư thái","nhẹ nhàng và chu đáo","các video giới thiệu liệu trình, chia sẻ kiến thức chăm sóc bản thân","người nghe cảm thấy thư giãn, được quan tâm","nói chậm, đều nhịp","sự tận tâm của người chăm sóc"],
+["💰","Tài chính - Bảo hiểm","Phân tích · Quản lý tiền · Khách quan","rõ ràng, điềm tĩnh và chắc chắn","chuyên gia và khách quan","các video phân tích tài chính, kiến thức quản lý tiền","tạo sự tin cậy, truyền đạt thông tin chính xác","nói mạch lạc, có điểm dừng hợp lý","sự am hiểu của người tư vấn"],
+["🍜","Nhà hàng - Ẩm thực","Món ngon · Khuyến mãi · Mến khách","vui tươi, ấm áp và hào hứng","thân thiện và mến khách","các video giới thiệu món ăn, khuyến mãi","khơi gợi vị giác, tạo cảm giác muốn thưởng thức","nói nhanh vừa phải, có nhấn nhá ở tên món","niềm đam mê ẩm thực"],
+["✈️","Du lịch - Lữ hành","Điểm đến · Hành trình · Khám phá","tươi sáng, phấn khởi và giàu cảm xúc","khám phá và truyền cảm hứng","các video giới thiệu điểm đến, tour du lịch","người nghe hình dung được hành trình, khơi dậy mong muốn xách vali lên đường","nói lưu loát, có lên xuống giọng","năng lượng của người dẫn đường"],
+["🤖","Công nghệ - AI","Công cụ · Ứng dụng · Hiện đại","nhanh, sắc gọn và hiện đại","năng động và dứt khoát","các video giới thiệu công cụ, hướng dẫn ứng dụng AI","đơn giản hóa kiến thức phức tạp, thu hút sự chú ý","nói nhanh, rõ thuật ngữ","sự nhiệt huyết của người đi đầu công nghệ"],
+["👗","Thời trang","Bộ sưu tập · Phối đồ · Cá tính","cuốn hút, trẻ trung và cá tính","sành điệu và tự tin","các video giới thiệu bộ sưu tập, phối đồ","tạo xu hướng, khơi gợi mong muốn sở hữu","nói nhanh, có nhịp điệu","gu thẩm mỹ của người chia sẻ"],
+["🌾","Nông sản - Thực phẩm sạch","Vùng trồng · Nguồn gốc · Tử tế","mộc mạc, chân thành và ấm áp","gần gũi và tử tế","các video giới thiệu sản phẩm, câu chuyện vùng trồng","tạo sự tin tưởng về nguồn gốc, lan tỏa giá trị sạch","nói rõ ràng, nhịp vừa phải","tâm huyết của người làm nông"],
+["🚗","Ô tô - Xe máy","Mẫu xe · Trải nghiệm lái · Mạnh mẽ","trầm, khỏe khoắn và đầy uy lực","mạnh mẽ và đẳng cấp","các video giới thiệu mẫu xe, đánh giá trải nghiệm lái","tạo cảm giác phấn khích, làm nổi bật sức mạnh và thiết kế","nói dứt khoát, nhấn rõ thông số quan trọng","niềm đam mê tốc độ"],
+["🛋️","Nội thất - Kiến trúc","Công trình · Thiết kế · Tinh tế","ấm áp, điềm đạm và tinh tế","sang trọng và giàu cảm hứng thẩm mỹ","các video giới thiệu công trình, ý tưởng thiết kế","người nghe hình dung được không gian sống mơ ước","nói chậm vừa, giàu hình ảnh","sự am hiểu của người kiến tạo không gian"],
+["💪","Gym - Thể hình - Thể thao","Tập luyện · Thử thách · Kỷ luật","mạnh mẽ, dứt khoát và bùng nổ năng lượng","thúc đẩy và tràn đầy nhiệt huyết","các video hướng dẫn tập luyện, thử thách thể lực","tiếp thêm động lực, khích lệ người nghe vượt qua giới hạn của bản thân","nói nhanh, dồn dập ở những đoạn cao trào","tinh thần kỷ luật của người huấn luyện"],
+["🍼","Mẹ và bé","Nuôi con · Yêu thương · An tâm","dịu dàng, ngọt ngào và ân cần","yêu thương và gần gũi","các video chia sẻ kinh nghiệm nuôi con, giới thiệu sản phẩm cho bé","các bậc cha mẹ cảm thấy được thấu hiểu, an tâm khi lựa chọn","nói chậm vừa, mềm mại","sự tận tình của người đồng hành cùng gia đình"],
+["🦷","Nha khoa - Y tế","Kiến thức · Dịch vụ · Tận tâm","điềm tĩnh, rõ ràng và ân cần","chuyên môn và tận tâm","các video chia sẻ kiến thức sức khỏe, giới thiệu dịch vụ","người nghe yên tâm, hiểu đúng thông tin và chủ động chăm sóc sức khỏe","nói chậm rãi, rõ ràng","sự tận tâm của người thầy thuốc"],
+["⚖️","Luật - Tư vấn pháp lý","Pháp luật · Thủ tục · Chuẩn mực","rõ ràng, chắc chắn và chuẩn mực","nghiêm túc và khách quan","các video giải đáp pháp luật, hướng dẫn thủ tục","người nghe nắm rõ quyền lợi, hiểu đúng quy định","nói mạch lạc, có điểm dừng hợp lý","sự vững vàng của người làm luật"],
+["🤝","Tuyển dụng - Nhân sự","Cơ hội · Văn hóa · Con người","tươi sáng, cởi mở và chuyên nghiệp","thân thiện và tích cực","các video thông báo tuyển dụng, chia sẻ kỹ năng nghề nghiệp","lan tỏa văn hóa doanh nghiệp, thu hút ứng viên phù hợp","nói lưu loát, nhịp vừa phải","sự trân trọng dành cho con người"],
+["💎","Trang sức - Đá quý","Bộ sưu tập · Thương hiệu · Quý phái","sâu lắng, mượt mà và quý phái","sang trọng và tinh tế","các video giới thiệu bộ sưu tập, câu chuyện thương hiệu","tôn lên giá trị của từng thiết kế, khơi gợi cảm xúc gắn bó","nói chậm, nhấn nhá tinh tế","sự trân quý của người chế tác"],
+["🏨","Khách sạn - Resort","Nghỉ dưỡng · Trải nghiệm · Thanh lịch","ấm áp, thanh lịch và thư thái","mến khách và chuyên nghiệp","các video giới thiệu phòng nghỉ, trải nghiệm nghỉ dưỡng","người nghe cảm nhận được sự thư giãn, mong muốn được tận hưởng kỳ nghỉ","nói chậm vừa, thư thái","sự chu đáo của người chủ nhà"],
+["🚀","Kinh doanh online - Khởi nghiệp","Kinh nghiệm · Bài học · Bứt phá","cao, rõ ràng và đầy năng lượng","truyền cảm hứng và dứt khoát","các video chia sẻ kinh nghiệm kinh doanh, bài học khởi nghiệp","thu hút sự chú ý, truyền đạt thông điệp mạnh mẽ","nói nhanh, lưu loát","năng lượng của người đang chia sẻ"]
+].map((r,i)=>({i,ico:r[0],name:r[1],tags:r[2],tone:r[3],style:r[4],use:r[5],help:r[6],pace:r[7],spirit:r[8],c:COLORS[i%8]}));
+
+const PROV={
+  local:{label:"Local (miễn phí)",model:""},
+  claude:{label:"Claude",model:"claude-sonnet-5-5",keyLab:"Claude API Key (console.anthropic.com)"},
+  gemini:{label:"Google Gemini",model:"gemini-2.5-flash",keyLab:"Gemini API Key (aistudio.google.com)"},
+  openai:{label:"ChatGPT",model:"gpt-4o-mini",keyLab:"OpenAI API Key (platform.openai.com)"}
+};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const ls={get(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let sel=null,gender="",hist=ls.get("vf_hist",[]),cfg=ls.get("vf_cfg",{provider:"local",keys:{},models:{}});
+const sig=ls.get("vf_sig",null);if(sig)$("sig").value=sig;
+
+/* Đăng nhập Google */
+const fc=window.FIREBASE_CONFIG||{};
+let auth=null;
+if(!fc.apiKey){
+  $("gateMsg").textContent="App chưa được cài Firebase. Quản trị viên cần điền cấu hình vào file firebase-config.js.";
+  $("login").classList.add("hidden");
+}else{
+  auth=getAuth(initializeApp(fc));
+  onAuthStateChanged(auth,u=>{
+    $("gate").classList.toggle("hidden",!!u);
+    if(u){$("uname").textContent=u.displayName||u.email||"";if(u.photoURL){$("avatar").src=u.photoURL;$("avatar").classList.remove("hidden")}}
+  });
+  $("login").addEventListener("click",()=>signInWithPopup(auth,new GoogleAuthProvider()).catch(e=>{$("gateMsg").textContent="Đăng nhập chưa thành công: "+(e.code||e.message)}));
+  $("logout").addEventListener("click",()=>signOut(auth));
+}
+
+/* Cài đặt AI */
+function renderProv(){
+  $("prov").innerHTML=Object.entries(PROV).map(([k,p])=>`<button class="chip" data-p="${k}" aria-pressed="${cfg.provider===k}">${esc(p.label)}${k!=="local"&&cfg.keys[k]?'<span class="dot" title="Đã có key"></span>':""}</button>`).join("");
+  const p=cfg.provider;
+  $("keyArea").classList.toggle("hidden",p==="local");
+  if(p!=="local"){$("keyLab").textContent=PROV[p].keyLab;$("key").value=cfg.keys[p]||"";$("model").value=cfg.models[p]||PROV[p].model}
+  $("keyNote").textContent=p==="local"?"Chế độ Local: ghép template ngay trên trình duyệt, không tốn credit.":(cfg.keys[p]?"Đã lưu key "+PROV[p].label+".":"Chưa có key "+PROV[p].label+".");
+}
+$("prov").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;cfg.provider=b.dataset.p;ls.set("vf_cfg",cfg);renderProv()});
+$("saveKey").addEventListener("click",()=>{const p=cfg.provider;if(p!=="local"){cfg.keys[p]=$("key").value.trim();cfg.models[p]=$("model").value.trim()||PROV[p].model}ls.set("vf_cfg",cfg);renderProv();$("keyNote").textContent="Đã lưu cài đặt ✓"});
+$("delKey").addEventListener("click",()=>{const p=cfg.provider;if(p==="local")return;delete cfg.keys[p];ls.set("vf_cfg",cfg);renderProv()});
+$("eye").addEventListener("click",()=>{const k=$("key");const show=k.type==="password";k.type=show?"text":"password";$("eye").textContent=show?"Ẩn":"Hiện"});
+
+/* Chọn ngành */
+function renderGrid(){
+  const q=$("q").value.trim().toLowerCase();
+  const list=D.filter(d=>!q||(d.name+" "+d.tags).toLowerCase().includes(q));
+  $("grid").innerHTML=list.length?list.map(d=>`<button class="card" style="--c:${d.c}" data-i="${d.i}" aria-pressed="${sel===d.i}"><span class="idx">${d.i+1}/20</span><span class="ico">${d.ico}</span><span class="name">${esc(d.name)}</span><span class="tags">${esc(d.tags)}</span><span class="tick"></span></button>`).join(""):`<div class="empty">Không tìm thấy ngành phù hợp.</div>`;
+  $("foot").textContent=sel===null?"Chưa chọn ngành · 20 template sẵn sàng.":"Đã chọn: "+D[sel].name+" · mỗi lần tạo ra 1 đoạn mô tả giọng hoàn chỉnh.";
+}
+$("grid").addEventListener("click",e=>{const b=e.target.closest(".card");if(!b)return;sel=+b.dataset.i;renderGrid()});
+$("q").addEventListener("input",renderGrid);
+$("gender").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;gender=b.dataset.g;for(const c of $("gender").children)c.setAttribute("aria-pressed",c===b)});
+$("sig").addEventListener("change",()=>ls.set("vf_sig",$("sig").value));
+
+function localVi(d,idea){
+  const g=gender?"giọng "+gender:"giọng nói";
+  const msg=idea?` Thông điệp chính của nội dung: ${idea.replace(/[.\s]+$/,"")}.`:"";
+  return `Đây là mẫu ${g} ${d.tone}, mang phong cách ${d.style}. Phù hợp để sử dụng trong ${d.use} và nội dung ngắn trên mạng xã hội.${msg} Giọng nói giúp ${d.help} và có lời CTA nhưng tránh các từ mang tính chất tuyệt đối hứa hẹn. Giọng nói trong trẻo - chuẩn giọng Hà Nội - ${d.pace} nhưng luôn thể hiện được ${d.spirit}.`;
+}
+function buildPrompt(d,idea,s){
+  return `Bạn là chuyên gia viết mô tả giọng nói (voice design prompt) cho Minimax, phục vụ xây dựng thương hiệu cá nhân NGUYENDUONG686.
+Mẫu gốc chuẩn: Đây là mẫu giọng nói cao, rõ ràng và đầy năng lượng, mang phong cách truyền cảm hứng và dứt khoát. Phù hợp để sử dụng trong các video chia sẻ kiến thức, đào tạo kỹ năng, và nội dung ngắn trên mạng xã hội. Giọng nói giúp thu hút sự chú ý, truyền đạt thông điệp mạnh mẽ và có lời CTA nhưng tránh các từ mang tính chất tuyệt đối hứa hẹn. Giọng nói trong trẻo - chuẩn giọng Hà Nội - nói nhanh lưu loát nhưng luôn thể hiện được năng lượng của người đang chia sẻ.
+Ngành: ${d.name}. Gợi ý cho ngành: âm sắc ${d.tone}; phong cách ${d.style}; ứng dụng ${d.use}; giúp ${d.help}; nhịp ${d.pace}; tinh thần ${d.spirit}.
+Giới tính giọng: ${gender||"không chỉ định"}.
+Câu ngắn của người dùng: ${idea||"(không có)"}.
+Phong cách cá nhân bắt buộc: ${s}.
+Yêu cầu: viết đoạn mô tả tiếng Việt dài 100-140 từ, giữ đúng cấu trúc mẫu gốc, lồng ý của câu ngắn vào tự nhiên, chính tả tiếng Việt chuẩn 100%, viết hoa đầu câu, không dùng dấu ** hay dấu ngoặc kép giữa câu, tuyệt đối không dùng từ hứa hẹn tuyệt đối như cam kết 100%, chắc chắn, đảm bảo, tốt nhất, số 1. Viết thêm bản tiếng Anh tự nhiên dành cho Minimax voice design. Viết thêm 2-3 câu đọc thử tiếng Việt theo đúng ngành và câu ngắn, kết thúc bằng một lời CTA nhẹ nhàng.
+Chỉ trả về JSON hợp lệ, không thêm chữ nào khác: {"vi":"...","en":"...","demo":"..."}`;
+}
+
+function show(r){
+  const parts=[["Mô tả giọng nói (Tiếng Việt)",r.vi],["Voice prompt cho Minimax (English)",r.en],["Câu đọc thử",r.demo]].filter(p=>p[1]);
+  $("out").innerHTML=parts.map((p,k)=>`<div class="box"><h3><span>${esc(p[0])}</span><button class="ghost" data-k="${k}">Sao chép</button></h3><p>${esc(p[1])}</p></div>`).join("");
+  $("out").onclick=async e=>{const b=e.target.closest("button");if(!b)return;try{await navigator.clipboard.writeText(parts[+b.dataset.k][1]);b.textContent="Đã chép ✓"}catch(err){b.textContent="Hãy bôi đen để chép"}setTimeout(()=>b.textContent="Sao chép",1800)};
+}
+function renderHist(){
+  $("histWrap").classList.toggle("hidden",!hist.length);
+  $("hist").innerHTML=hist.map((h,k)=>`<button data-k="${k}">${esc(h.name)} · ${esc(h.idea||"Không có câu ngắn")}</button>`).join("");
+}
+$("hist").addEventListener("click",e=>{const b=e.target.closest("button");if(b)show(hist[+b.dataset.k])});
+
+$("go").addEventListener("click",async()=>{
+  if(sel===null){$("status").textContent="Sếp chọn 1 ngành ở bước 1 trước nhé.";return}
+  const d=D[sel],idea=$("idea").value.trim(),s=$("sig").value.trim(),p=cfg.provider;
+  let r=null;
+  if(p!=="local"){
+    if(!cfg.keys[p]){$("status").textContent="Chưa có API key "+PROV[p].label+". Sếp dán key và bấm Lưu cài đặt.";return}
+    $("go").disabled=true;$("status").textContent="Đang nhờ "+PROV[p].label+" viết...";
+    try{
+      const res=await fetch("/api/generate",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({provider:p,apiKey:cfg.keys[p],model:cfg.models[p]||PROV[p].model,prompt:buildPrompt(d,idea,s)})});
+      const j=await res.json();
+      if(!res.ok)throw new Error(j.error||"Lỗi "+res.status);
+      const m=String(j.text).match(/\{[\s\S]*\}/);r=JSON.parse(m?m[0]:j.text);
+      if(!r||!r.vi)throw new Error("AI trả về sai định dạng");
+      $("status").textContent="Đã tạo xong bằng "+PROV[p].label+". Sếp bấm Sao chép để dùng.";
+    }catch(err){r=null;$("status").textContent="Chưa gọi được AI ("+err.message+"). Em tạo tạm bằng template."}
+    $("go").disabled=false;
+  }else $("status").textContent="Đã tạo bằng template Local, không tốn credit.";
+  if(!r)r={vi:localVi(d,idea),en:"",demo:""};
+  r.name=d.name;r.idea=idea;
+  hist=[r,...hist].slice(0,10);ls.set("vf_hist",hist);
+  show(r);renderHist();
+});
+
+renderProv();renderGrid();renderHist();
+</script>
+</body>
+</html>
